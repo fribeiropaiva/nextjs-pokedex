@@ -16,7 +16,7 @@ export async function getStaticPaths() {
         }
       };
     })
-    .slice(0, 30);
+    .slice(0, 8);
 
   return {
     fallback: true,
