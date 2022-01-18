@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -2px 1px 13px rgba(0, 0, 0, 0.1);
+
+  .image {
+    max-width: 100%;
+    max-height: 50%;
+  }
+
+  .name,
+  .type {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .id {
+    font-size: 1rem;
+    font-style: italic;
+  }
+}
