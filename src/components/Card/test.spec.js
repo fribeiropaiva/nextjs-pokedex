@@ -3,7 +3,7 @@ import { Card } from "./index";
 import "@testing-library/jest-dom";
 
 describe("Pokedex Cards", () => {
-  test("Card renders completely", () => {
+  test("Card renders completely", async () => {
     const pokemon = {
       name: "Absol",
       images: {
@@ -20,15 +20,15 @@ describe("Pokedex Cards", () => {
     expect(card).toBeInTheDocument();
 
     // check if image was rendered
-    const image = screen.getByRole("img");
+    const image = await screen.getByRole("img");
     expect(image).toBeInTheDocument();
 
     //check if pokemon name is correct
     const name = screen.getByText(`Name: ${pokemon.name}`);
-    expect(name).toHaveTextContent("Name: Absol");
+    expect(name).not.toBeNull();
 
     //check if types are correct
-    const types = screen.getByText(pokemon.types[0]);
-    expect(types).toHaveTextContent("Type: Darkness");
+    const types = screen.getByText(`Type: ${pokemon.types[0]}`);
+    expect(types).not.toBeNull();
   });
 });
