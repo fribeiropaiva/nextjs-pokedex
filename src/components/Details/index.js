@@ -31,7 +31,9 @@ export function Details({ data }) {
               <div>
                 <h3>Types</h3>
                 {data?.types?.map((type) => (
-                  <p key={type}>{type}</p>
+                  <p key={`${type}-${Math.floor(Math.random() * 10000)}`}>
+                    {type}
+                  </p>
                 ))}
               </div>
             )}
@@ -39,7 +41,13 @@ export function Details({ data }) {
               <div>
                 <h3>Resistances</h3>
                 {data?.resistances?.map((resistance) => (
-                  <p key={resistance?.type}>{resistance?.type}</p>
+                  <p
+                    key={`${resistance?.type}-${Math.floor(
+                      Math.random() * 10000
+                    )}`}
+                  >
+                    {resistance?.type}
+                  </p>
                 ))}
               </div>
             )}
@@ -47,7 +55,13 @@ export function Details({ data }) {
               <div>
                 <h3>Weakenesses</h3>
                 {data?.weaknesses?.map((weakness) => (
-                  <p key={weakness?.type}>{weakness?.type}</p>
+                  <p
+                    key={`${weakness?.type}-${Math.floor(
+                      Math.random() * 10000
+                    )}`}
+                  >
+                    {weakness?.type}
+                  </p>
                 ))}
               </div>
             )}
@@ -55,7 +69,10 @@ export function Details({ data }) {
               <div className={styles.attacks}>
                 <h3>Attacks</h3>
                 {data?.attacks?.map((attack) => (
-                  <button onClick={() => openModal(attack)} key={attack?.type}>
+                  <button
+                    onClick={() => openModal(attack)}
+                    key={`${attack?.type}-${Math.floor(Math.random() * 10000)}`}
+                  >
                     {attack?.name}
                   </button>
                 ))}
